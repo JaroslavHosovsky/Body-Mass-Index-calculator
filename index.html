@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Body mass index calculator</title>
+  </head>
+  <body class="font-inter lg:relative">
+    <header
+      class="gradient-bg rounded-border h-[600px] lg:w-[65%] lg:flex lg:flex-col"
+    >
+      <div
+        class="w-[85%] m-auto flex flex-col justify-center items-center text-center lg:text-left lg:items-start lg:mt-5"
+      >
+        <img
+          src="img/logo.svg"
+          alt=""
+          class="w-[10%] mt-9 md:max-lg:w-[7%] lg:mb-20"
+        />
+        <h1
+          class="text-5xl text-[#253347] font-bold mt-7 md:max-lg:mt-14 md:max-lg:text-6xl md:max-lg:max-w-[481px] lg:max-w-[395px]"
+        >
+          Body Mass Index Calculator
+        </h1>
+        <p class="text-[#5E6E85] mt-7 lg:max-w-[395px] lg:text-sm">
+          Better understand your weight in relation to your height using our
+          body mass index (BM) calculator. While BMI is not the sole determinant
+          of a healthy weight, it offers a valuable starting point to evaluate
+          your overall health and well-being.
+        </p>
+      </div>
+    </header>
+    <!-- Calc section - start -->
+    <section
+      class="w-[85%] m-auto p-6 bg-white absolute max-lg:top-[450px] max-lg:left-[50%] max-lg:translate-x-[-50%] rounded-2xl shadow-[10px_10px_70px] shadow-[#cde0f7] mb-14 lg:w-[450px] lg:h-[380px] lg:absolute lg:top-[110px] lg:right-[80px] lg:m-0"
+    >
+      <h1
+        class="text-xl md:max-lg:text-3xl text-[#253347] font-semibold mb-4 md:max-lg:mb-10"
+      >
+        Enter your details below
+      </h1>
+
+      <!-- Checkboxes - start -->
+      <div
+        class="flex justify-between mb-8 md:max-lg:mb-14 md:grid md:grid-cols-2 md:grid-rows-1 md:gap-6"
+      >
+        <!-- Metric line - start -->
+        <div class="flex items-center gap-3">
+          <div
+            class="border-2 border-[#ecf1f3] hover:border-[#345FF6] w-[20px] h-[20px] md:max-lg:w-[40px] md:max-lg:h-[40px] rounded-[50%] cursor-pointer empty-checkbox1 hidden"
+          ></div>
+          <div
+            class="w-[20px] h-[20px] md:max-lg:w-[40px] md:max-lg:h-[40px] rounded-[50%] bg-[#e1e7fe] flex justify-center items-center filled-checkbox1"
+          >
+            <div
+              class="w-[10px] h-[10px] md:max-lg:w-[20px] md:max-lg:h-[20px] rounded-[50%] bg-[#345FF6]"
+            ></div>
+          </div>
+          <p class="text-[#253347] font-semibold md:max-lg:text-xl">Metric</p>
+        </div>
+        <!-- Metric line - end -->
+      </div>
+      <!-- Checkboxes - end -->
+
+      <!-- Height + Weight inputs - start -->
+      <div class="md:flex justify-between gap-6">
+        <div class="relative mb-8 md:flex-1">
+          <p
+            class="absolute top-[-25px] left-[0px] md:max-lg:top-[-35px] md:max-lg:left-[0px] text-[#939ead] text-sm md:max-lg:text-lg"
+          >
+            Height
+          </p>
+          <input
+            type="number"
+            name=""
+            id="height-input"
+            placeholder="0"
+            class="border-2 border-[#ecf1f3] w-[100%] h-12 md:max-lg:h-20 p-4 outline-none rounded-xl font-bold hover:border-[#345FF6]"
+          />
+          <p
+            class="absolute bottom-[10px] right-[20px] md:max-lg:bottom-[25px] md:max-lg:right-[25px] text-[#345FF6] text-xl md:max-lg:text-3xl font-semibold"
+          >
+            cm
+          </p>
+        </div>
+
+        <div class="relative md:flex-1">
+          <p
+            class="absolute top-[-25px] left-[0px] md:max-lg:top-[-35px] md:max-lg:left-[0px] text-[#939ead] text-sm md:max-lg:text-lg"
+          >
+            Weight
+          </p>
+          <input
+            type="number"
+            name=""
+            id="weight-input"
+            placeholder="0"
+            class="border-2 border-[#ecf1f3] w-[100%] h-12 md:max-lg:h-20 p-4 outline-none rounded-xl font-bold hover:border-[#345FF6]"
+          />
+          <p
+            class="absolute bottom-[10px] right-[20px] md:max-lg:bottom-[55px] md:max-lg:right-[25px] text-[#345FF6] text-xl md:max-lg:text-3xl font-semibold lg:top-[10px]"
+          >
+            kg
+          </p>
+        </div>
+      </div>
+      <!-- Height + Weight inputs - end -->
+
+      <!-- Result section - start -->
+      <div
+        class="mt-6 lg:mt-0 bg-[#345FF6] p-6 rounded-2xl md:rounded-r-[80px] welcome-text"
+      >
+        <div class="md:max-lg:ml-5">
+          <h1
+            class="text-white text-2xl mb-3 md:max-lg:text-4xl md:max-lg:font-semibold"
+          >
+            Welcome!
+          </h1>
+          <p class="text-white text-sm font-normal md:max-lg:text-base">
+            Enter your height and weight and you´ll see your BMI result here
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 lg:mt-0 bg-[#345FF6] p-6 rounded-2xl md:grid md:grid-cols-2 md:grid-rows-1 md:rounded-r-[80px] hidden md:hidden lg:hidden result-text"
+      >
+        <div class="md:max-lg:ml-5">
+          <h2 class="text-white mb-3 md:max-lg:text-lg">Your BMI is...</h2>
+          <h1
+            class="text-white text-4xl mb-5 lg:mb-0 md:max-lg:text-6xl md:max-lg:font-semibold result-number"
+          ></h1>
+        </div>
+        <div
+          class="md:max-lg:flex md:max-lg:justify-center md:max-lg: items-center"
+        >
+          <p
+            class="text-white text-sm font-normal md:max-lg:text-base lg:text-xs final-text"
+          >
+            <!-- Your BMI suggests you´re a healthy weight. Your ideal weight is
+            between
+            <span class="text-base lg:text-sm font-semibold"
+              >63.3kgs - 85.2kgs.</span
+            > -->
+          </p>
+        </div>
+      </div>
+      <!-- Result section - end -->
+    </section>
+    <!-- Calc section - end -->
+
+    <!-- Explanation section - start -->
+    <section
+      class="mt-[450px] w-[85%] m-auto mb-20 md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:grid-rows-1 md:max-lg:w-[93%] md:max-lg:ml-0 md:max-lg:mr-a lg:mt-14 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-10"
+    >
+      <img src="img/image-man-eating.webp" alt="" class="mb-10" />
+      <div
+        class="md:max-lg:flex md:max-lg:flex-col md:max-lg:pl-12 md:max-lg:pt-5 lg:flex lg:flex-col lg:justify-center lg:p-10"
+      >
+        <h1 class="text-3xl font-semibold mb-6 md:max-lg:font-bold">
+          What your BMI result means
+        </h1>
+        <p class="text-sm text-[#5E6E85] md:max-lg:text-base">
+          A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+          Maintaining a healthy weight may lower your chances of experiencing
+          health issues later on, such as obesity and type 2 diabetes. Aim for a
+          nutritious diet with reduced fat and sugar content, incorporating
+          ample fruits and vegetables. Additionally, strive for regular physical
+          activity, ideally about 30 minutes daily for five days a week.
+        </p>
+      </div>
+    </section>
+    <!-- Explanation section - end -->
+
+    <!-- Advice section - start -->
+    <section class="gradient-advice py-12">
+      <div
+        class="w-[85%] m-auto lg:grid lg:grid-cols-3 lg:grid-rows-1 lg:gap-10"
+      >
+        <div
+          class="md:max-lg:flex md:max-lg:justify-center md:max-lg:items-center md:max-lg:gap-10"
+        >
+          <img src="img/icon-eating.svg" alt="" class="mb-5" />
+          <div class="">
+            <h1
+              class="mb-5 font-semibold text-xl md:max-lg:flex md:max-lg:text-2xl md:max-lg:font-bold"
+            >
+              Healthy eating
+            </h1>
+            <p class="text-[#5E6E85] md:max-lg:text-lg">
+              Healthy eating promotes weight control, disease prevention, better
+              digestion, immunity, mental clarity, and mood.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pt-10 lg:pt-0 md:max-lg:flex md:max-lg:justify-center md:max-lg:items-center md:max-lg:gap-10"
+        >
+          <img src="img/icon-exercise.svg" alt="" class="mb-5" />
+          <div class="">
+            <h1
+              class="mb-5 font-semibold text-xl md:max-lg:text-2xl md:max-lg:font-bold"
+            >
+              Regular excercise
+            </h1>
+            <p class="text-[#5E6E85] md:max-lg:text-lg">
+              Exercise improves fitness, aids weight control, elevates mood, and
+              reduces disease risk, fostering wellness and longevity.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pt-10 lg:pt-0 md:max-lg:flex md:max-lg:justify-center md:max-lg:items-center md:max-lg:gap-10"
+        >
+          <img src="img/icon-sleep.svg" alt="" class="mb-5" />
+          <div class="">
+            <h1
+              class="mb-5 font-semibold text-xl md:max-lg:text-2xl md:max-lg:font-bold"
+            >
+              Adequate sleep
+            </h1>
+            <p class="text-[#5E6E85] md:max-lg:text-lg">
+              Sleep enhances mental clarity, emotional stability, and physical
+              wellness, promoting overall restoration and rejuvenation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Advice section - end -->
+
+    <!-- Limitations section - start -->
+    <section class="w-[85%] m-auto my-24 lg:relative">
+      <div
+        class="text-center mb-10 md:max-lg:mb-16 lg:w-[380px] lg:text-left lg:mb-[600px]"
+      >
+        <h1 class="text-2xl font-bold mb-5 md:max-lg:text-4xl lg:text-3xl">
+          Limitations of BMI
+        </h1>
+        <p class="text-[#5E6E85] md:max-lg:text-xl lg:text-sm">
+          Although BMI is often a practical indicator of healthy weight, it is
+          not suited for every person. Specific groups should carefully consider
+          their BMI outcomes, and in certain cases, the measurement may not be
+          beneficial to use.
+        </p>
+      </div>
+
+      <!-- Card-container - start -->
+      <div
+        class="md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:grid-rows-3 md:max-lg:relative md:max-lg:gap-5"
+      >
+        <div
+          class="p-6 md:max-lg:p-10 shadow-[10px_10px_35px] shadow-[#cce4f0] mb-6 rounded-2xl lg:w-[350px] lg:absolute lg:top-[0px] lg:right-[85px]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/icon-gender.svg" alt="" class="" />
+            <h1 class="text-lg font-semibold md:max-lg:text-2xl">Gender</h1>
+          </div>
+          <p class="text-[#5E6E85] md:max-lg:text-lg">
+            The development and body fat composition of girls and boys vary with
+            age. Consequently, a child's age and gender are considered when
+            evaluating their BMI.
+          </p>
+        </div>
+
+        <div
+          class="p-6 md:max-lg:p-10 shadow-[10px_10px_35px] shadow-[#cce4f0] mb-6 rounded-2xl lg:w-[350px] lg:absolute lg:top-[250px] lg:right-[380px]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/icon-age.svg" alt="" class="" />
+            <h1 class="text-lg font-semibold md:max-lg:text-2xl">Age</h1>
+          </div>
+          <p class="text-[#5E6E85] md:max-lg:text-lg">
+            In aging individuals, increased body fat and muscle loss may cause
+            BMI to underestimate body fat content.
+          </p>
+        </div>
+
+        <div
+          class="p-6 md:max-lg:p-10 shadow-[10px_10px_35px] shadow-[#cce4f0] mb-6 rounded-2xl lg:w-[350px] lg:absolute lg:top-[250px] lg:right-[0px]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/icon-muscle.svg" alt="" class="" />
+            <h1 class="text-lg font-semibold md:max-lg:text-2xl">Muscle</h1>
+          </div>
+          <p class="text-[#5E6E85] md:max-lg:text-lg">
+            BMI may misclassify muscular individuals as overweight or obese, as
+            it doesn't differentiate muscle from fat.
+          </p>
+        </div>
+
+        <div
+          class="p-6 md:max-lg:p-10 shadow-[10px_10px_35px] shadow-[#cce4f0] mb-6 rounded-2xl lg:w-[350px] lg:absolute lg:top-[450px] lg:right-[500px]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/icon-pregnancy.svg" alt="" class="" />
+            <h1 class="text-lg font-semibold md:max-lg:text-2xl">Pregnancy</h1>
+          </div>
+          <p class="text-[#5E6E85] md:max-lg:text-lg">
+            Expectant mothers experience weight gain due to their growing baby.
+            Maintaining a healthy pre-pregnancy BMI is advisable to minimise
+            health risks for both mother and child.
+          </p>
+        </div>
+
+        <div
+          class="p-6 md:max-lg:p-10 shadow-[10px_10px_35px] shadow-[#cce4f0] mb-6 rounded-2xl md:max-lg:absolute md:max-lg:bottom-[-55px] md:max-lg:left-[50%] md:max-lg:translate-x-[-50%] md:max-lg:h-[325px] lg:w-[350px] lg:absolute lg:top-[450px] lg:right-[100px]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <img src="img/icon-race.svg" alt="" class="" />
+            <h1 class="text-lg font-semibold md:max-lg:text-2xl">Race</h1>
+          </div>
+          <p class="text-[#5E6E85] md:max-lg:text-lg">
+            Certain health concerns may affect individuals of some Black and
+            Asian origins at lower BMIs than others. To learn more, it is
+            advised to discuss this with your GP or practice nurse.
+          </p>
+        </div>
+      </div>
+      <!-- Card-container - end -->
+    </section>
+
+    <!-- Limitations section - end -->
+    <script src="script.js"></script>
+  </body>
+</html>
